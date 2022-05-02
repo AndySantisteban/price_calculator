@@ -7,7 +7,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -55,26 +54,19 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void sum() {
     setState(() {
-      /* suma sub total */
       int price1 = int.tryParse(price1Controller.text)?.toInt() ?? 0;
-      print(price1);
       int price2 = int.tryParse(price2Controller.text)?.toInt() ?? 0;
-      print(price2);
       int price3 = int.tryParse(price3Controller.text)?.toInt() ?? 0;
-      print(price3);
       int quantity1 = int.tryParse(quantity1Controller.text)?.toInt() ?? 1;
-      print(quantity1);
       int quantity2 = int.tryParse(quantity2Controller.text)?.toInt() ?? 1;
-      print(quantity2);
       int quantity3 = int.tryParse(quantity3Controller.text)?.toInt() ?? 1;
-      print(quantity3);
       double total =
           ((price1 * quantity1) + (price2 * quantity2) + (price3 * quantity3))
               .toDouble();
       subtotal = total;
       subtotal2 = total * igv;
 
-      totalController.text = (subtotal - subtotal2).toString();
+      totalController.text = (subtotal + subtotal2).toString();
     });
   }
 
@@ -218,7 +210,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       margin: const EdgeInsets.all(10),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Text("Sub Total",
+                        child: Text("Base Imponible",
                             style: TextStyle(
                               fontSize: 18,
                             )),
